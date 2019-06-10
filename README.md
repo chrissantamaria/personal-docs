@@ -9,8 +9,10 @@ The site is built using [Docz](https://www.docz.site/), a flexible documentation
 ```
 # Install dependencies
 npm install
+
 # Run the dev server
 npm run docz:dev
+
 # Build a servable client
 npm run docz:build
 ```
@@ -18,3 +20,25 @@ npm run docz:build
 ## Current topics
 
 - [Material-UI](https://material-ui.com/)
+  - Styling
+
+## Planned topics
+
+- React
+  - `useState` and `useEffect` hooks basics
+- Node
+  - Basic Express setup / error handling
+  - CLI arguments using Commander
+  - Importing + exporting CSVs
+  - Formatting phone numbers
+  - Rate limiting
+  - Cronjobs
+- CSS
+  - Flexbox
+  - Grid
+- Python
+  - Basic iteration / filtering / mapping
+- Mathematica
+  - Shorthand functions like Map, substitution, etc
+  - Solving equations using Solve / Reduce
+  - Basic plotting
