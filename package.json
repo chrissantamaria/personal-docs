@@ -1,0 +1,17 @@
+{
+  "name": "personal-docs",
+  "version": "0.1.0",
+  "author": "Chris Santamaria <chris@santamaria.me>",
+  "scripts": {
+    "docz:dev": "docz dev",
+    "docz:build": "docz build"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@material-ui/core": "^4.1.0",
+    "docz": "^1.2.0",
+    "docz-theme-default": "^1.2.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
+}

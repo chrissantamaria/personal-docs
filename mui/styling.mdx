@@ -1,0 +1,81 @@
+---
+name: Styling
+menu: Material-UI
+---
+
+import { Playground } from "docz";
+import { makeStyles } from "@material-ui/styles";
+import Button from "@material-ui/core/Button";
+
+# Styling with Material-UI
+
+(note this guide uses the new "Hook" format of Material-UI styling. See the [Material-UI docs](https://material-ui.com/styles/basics/) for other methods + more in-depth explanations)
+
+Material-UI uses their own `makeStyles` package and a specific object format to style components. `makeStyles` can be imported from `@material-ui/core/styles` or `@material-ui/styles`.
+
+```js
+import { makeStyles } from "@material-ui/core/styles";
+```
+
+Style objects can then be declared outside of components (even in a separate file) and formatted using the following syntax:
+
+```js
+const useStyles = makeStyles({
+  className: {
+    // Numbers for sizing automatically resolve to pixels
+    margin: 30,
+    // Strings can still be passed for more complex behavior
+    padding: "0 20px"
+  }
+});
+```
+
+This creates a `useStyles` function that is ready to be called inside any function:
+
+```js
+function App() {
+  const classes = useStyles();
+  render <StyledComponent classes={classes.className} />;
+}
+```
+
+<Playground>
+  {() => {
+    const useStyles = makeStyles({
+      root: {
+        background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
+        border: 0,
+        borderRadius: 3,
+        boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
+        color: "white",
+        height: 48,
+        padding: "0 30px"
+      }
+    });
+    function Hook() {
+      const classes = useStyles();
+      return <Button className={classes.root}>Styled button</Button>;
+    }
+    return <Hook />;
+  }}
+</Playground>
+
+Material-UI also offers built-in theming functionality, so style objects can be set up to use theme-specific properties like so:
+
+```js
+const useStyles = makeStyles(theme => ({
+  paper: {
+    marginTop: theme.spacing(8)
+  },
+  avatar: {
+    margin: theme.spacing(1),
+    backgroundColor: theme.palette.secondary.main
+  },
+  link: {
+    textDecoration: "none",
+    color: theme.palette.text.primary
+  }
+}));
+```
+
+By defining component styling in terms of `theme` properties, pages can instantly be changed from, for example, a light to dark theme without writing any extra styling.
