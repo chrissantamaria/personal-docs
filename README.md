@@ -33,6 +33,8 @@ npm run docz:build
   - Formatting phone numbers
   - Rate limiting
   - Cronjobs
+- Git
+  - Basic commands / quick fixes
 - CSS
   - Flexbox
   - Grid
