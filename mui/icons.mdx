@@ -1,0 +1,34 @@
+---
+name: Icons
+menu: Material-UI
+---
+
+import { Playground } from "docz";
+import IconButton from "@material-ui/core/IconButton";
+import NotificationIcon from "@material-ui/icons/Notifications";
+
+# Icons
+
+(more in-depth documentation can be found [here](https://www.npmjs.com/package/@material-ui/icons))
+
+Material-UI offers an additional package providing hundreds of SVG icons which can be installed using `yarn add @material-ui/icons`.
+
+A full list of usable icons can be found [here](https://material.io/tools/icons/?style=baseline). To import an icon, simply use:
+
+```js
+import TimerIcon from "@material-ui/icons/Timer";
+```
+
+Note that icons are saved in `@material-ui/icons` using PascalCase.
+
+An example using an `IconButton` component
+
+<Playground>
+  <p>Click the button for a notification</p>
+  <IconButton>
+    <NotificationIcon
+      fontSize="large"
+      onClick={() => alert("Button clicked")}
+    />
+  </IconButton>
+</Playground>
