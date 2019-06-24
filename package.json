@@ -9,6 +9,7 @@
   "license": "ISC",
   "dependencies": {
     "@material-ui/core": "^4.1.0",
+    "@material-ui/icons": "^4.1.0",
     "docz": "^1.2.0",
     "docz-theme-default": "^1.2.0",
     "react": "^16.8.6",
