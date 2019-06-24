@@ -13,13 +13,13 @@ import Button from "@material-ui/core/Button";
 
 Material-UI uses their own `makeStyles` package and a specific object format to style components. `makeStyles` can be imported from `@material-ui/core/styles` or `@material-ui/styles`.
 
-```js
+```jsx
 import { makeStyles } from "@material-ui/core/styles";
 ```
 
 Style objects can then be declared outside of components (even in a separate file) and formatted using the following syntax:
 
-```js
+```jsx
 const useStyles = makeStyles({
   className: {
     // Numbers for sizing automatically resolve to pixels
@@ -32,7 +32,7 @@ const useStyles = makeStyles({
 
 This creates a `useStyles` function that is ready to be called inside any function:
 
-```js
+```jsx
 function App() {
   const classes = useStyles();
   render <StyledComponent classes={classes.className} />;
@@ -62,7 +62,7 @@ function App() {
 
 Material-UI also offers built-in theming functionality, so style objects can be set up to use theme-specific properties like so:
 
-```js
+```jsx
 const useStyles = makeStyles(theme => ({
   paper: {
     marginTop: theme.spacing(8)
