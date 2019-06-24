@@ -23,7 +23,9 @@ yarn start
 ## Current topics
 
 - [Material-UI](https://material-ui.com/)
+  - Getting Started
   - Styling
+  - Icons
 
 ## Planned topics
 
