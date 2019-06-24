@@ -8,13 +8,16 @@ The site is built using [Docz](https://www.docz.site/), a flexible documentation
 
 ```
 # Install dependencies
-npm install
+yarn
 
 # Run the dev server
-npm run docz:dev
+yarn run dev
 
 # Build a servable client
-npm run docz:build
+yarn build
+
+# Run a static server using built client
+yarn start
 ```
 
 ## Current topics
