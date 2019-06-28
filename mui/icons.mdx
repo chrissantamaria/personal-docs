@@ -27,11 +27,8 @@ An example using an `IconButton` component
 
 <Playground>
   <p>Click the button for a notification</p>
-  <IconButton>
-    <NotificationIcon
-      fontSize="large"
-      onClick={() => alert("Button clicked")}
-    />
+  <IconButton onClick={() => alert("Button clicked")}>
+    <NotificationIcon fontSize="large" />
   </IconButton>
 </Playground>
 
