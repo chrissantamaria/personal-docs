@@ -1,0 +1,60 @@
+---
+name: Formatting Phone Numbers
+menu: Node
+---
+
+import { useState } from "react";
+import { Playground } from "docz";
+import { makeStyles } from "@material-ui/styles";
+import { TextField, Typography } from "@material-ui/core";
+
+import { parsePhoneNumberFromString } from "libphonenumber-js";
+
+# Formatting Phone Numbers
+
+The [libphonenumber-js](https://www.npmjs.com/package/libphonenumber-js) package is a "simpler and smaller rewrite of Google Android's libphonenumber library: easy phone number parsing and formatting in javascript."
+
+The following is a useful function to format a raw phone number (ex: `843.555.0164`) to nicely formatted one (ex: `(843) 555-0164`). If a number is not a valid phone number (invalid length, area code, etc), the original will be returned.
+
+```js
+const { parsePhoneNumberFromString } = require("libphonenumber-js");
+// or using ES6 import:
+import { parsePhoneNumberFromString } from "libphonenumber-js";
+
+const formatPhoneNumber = number => {
+  const parsedNumber = parsePhoneNumberFromString(number, "US");
+  if (!parsedNumber) return number;
+  return parsedNumber.isValid() ? parsedNumber.formatNational() : number;
+};
+```
+
+<Playground>
+  {() => {
+    const formatPhoneNumber = number => {
+      const parsedNumber = parsePhoneNumberFromString(number, "US");
+      if (!parsedNumber) return number;
+      return parsedNumber.isValid() ? parsedNumber.formatNational() : number;
+    };
+
+    function PhoneDemo() {
+      const [phoneField, setPhoneField] = useState("202-555-0177");
+      return (
+        <div>
+          <TextField
+            style={{ marginBottom: 30 }}
+            variant="outlined"
+            label="Phone Number"
+            value={phoneField}
+            onChange={e => setPhoneField(e.target.value)}
+          />
+          <Typography variant="h5">
+            Formatted number: {formatPhoneNumber(phoneField)}
+          </Typography>
+        </div>
+      );
+    }
+    return <PhoneDemo />;
+
+}}
+
+</Playground>
