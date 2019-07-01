@@ -1,0 +1,89 @@
+---
+name: Handling CSVs
+menu: Node
+---
+
+# Handling CSVs
+
+## Importing
+
+[csvtojson](https://www.npmjs.com/package/csvtojson) is a great Promise-based package for importing CSV data into JavaScript objects.
+
+Using the following sample data (saved as `data.csv`):
+
+```
+Name,Favorite Color,Favorite Food
+Chris,purple,sushi
+Sam,red,
+James,green,pizza
+```
+
+Inside an `async` function, data can be imported using the following:
+
+```js
+const csv = require("csvtojson");
+const path = require("path");
+...
+const data = await csv().fromFile(path.join(__dirname, "data.csv"));
+```
+
+which should produce the following in `data`:
+
+<!-- prettier-ignore-start -->
+```js
+[
+  {
+    Name: "Chris",
+    "Favorite Color": "purple",
+    "Favorite Food": "sushi"
+  },
+  {
+    Name: "Sam",
+    "Favorite Color": "red",
+    "Favorite Food": ""
+  },
+  {
+    Name: "James",
+    "Favorite Color": "green",
+    "Favorite Food": "pizza"
+  }
+]
+```
+<!-- prettier-ignore-end -->
+
+Alternatively, an object can be passed into `csv()` such as `{ output: 'csv' }`, resulting in the following `data`:
+
+<!-- prettier-ignore-start -->
+```js
+[
+  ["Chris", "purple", "sushi"]
+  ["Sam", "red", ""]
+  ["James", "green", "pizza"]
+]
+```
+<!-- prettier-ignore-end -->
+
+## Exporting
+
+[json2csv](https://www.npmjs.com/package/json2csv) does the opposite: converts a Javascript object into a CSV string, ready to be written to a file using something like `fs`.
+
+Using the same object as above:
+
+```js
+const { parseAsync: parse } = require('json2csv');
+const fs = require('fs').promises;
+...
+const csv_new = await parse(data);
+await fs.writeFile('data_new.csv', csv_new);
+```
+
+will produce the following CSV (note that strings are automatically wrapped in double quotes):
+
+```
+"Name","Favorite Color","Favorite Food"
+"Chris","purple","sushi"
+"Sam","red",""
+"James","green","pizza"
+```
+
+json2csv also offers options such as custom [fields](https://www.npmjs.com/package/json2csv#example-fields-option) or [delimiters](https://www.npmjs.com/package/json2csv#example-5).

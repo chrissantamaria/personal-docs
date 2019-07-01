@@ -10,7 +10,7 @@ export default {
         },
         {
             name: 'Node',
-            menu: ['Formatting Phone Numbers']
+            menu: ['Formatting Phone Numbers', 'Handling CSVs']
         }
     ]
 };
