@@ -6,19 +6,17 @@ The site is built using [Docz](https://www.docz.site/), a flexible documentation
 
 ## Usage
 
-```
-# Install dependencies
-yarn
+### Install dependencies
+`yarn`
 
-# Run the dev server
-yarn run dev
+### Run the dev server
+`yarn run dev`
 
-# Build a servable client
-yarn build
+### Build a servable client
+`yarn build`
 
-# Run a static server using built client
-yarn start
-```
+### Run a static server using built client
+`yarn start`
 
 ## Current topics
 
