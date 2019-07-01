@@ -7,15 +7,19 @@ The site is built using [Docz](https://www.docz.site/), a flexible documentation
 ## Usage
 
 ### Install dependencies
+
 `yarn`
 
 ### Run the dev server
+
 `yarn run dev`
 
 ### Build a servable client
+
 `yarn build`
 
 ### Run a static server using built client
+
 `yarn start`
 
 ## Current topics
@@ -24,6 +28,9 @@ The site is built using [Docz](https://www.docz.site/), a flexible documentation
   - Getting Started
   - Styling
   - Icons
+- Node
+  - Importing + exporting CSVs
+  - Formatting phone numbers
 
 ## Planned topics
 
@@ -32,8 +39,6 @@ The site is built using [Docz](https://www.docz.site/), a flexible documentation
 - Node
   - Basic Express setup / error handling
   - CLI arguments using Commander
-  - Importing + exporting CSVs
-  - Formatting phone numbers
   - Rate limiting
   - Cronjobs
 - Git
