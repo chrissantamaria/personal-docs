@@ -4,6 +4,8 @@ A collection of code snippets or longer-form guides for personal reference based
 
 The site is built using [Docz](https://www.docz.site/), a flexible documentation generator that uses [MDX](https://mdxjs.com/) (Markdown + JSX) for writing pages.
 
+**Notice:** This project has been put on hold until several breaking issues with docz v2 are settled, in particular with Material-UI (see my bug report [here](https://github.com/doczjs/docz/issues/979)) and styled-components.
+
 ## Usage
 
 ### Install dependencies
